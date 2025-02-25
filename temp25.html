@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function chkholiday()
+        {
+        let doj=new Date(document.getElementById("day").value) 
+        if(doj.getDay()==3)
+        msg.innerHTML="sorry,we are closed on wednesday"
+    else
+    msg.innerHTML="welcome"
+        }
+    </script>
+</head>
+<body>
+    
+        <input type="date" id="day">
+        <button onclick="chkholiday()">submit</button>
+        <hr>
+        <div id="msg"></div>
+</body>
+</html>

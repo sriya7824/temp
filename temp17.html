@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1()
+        {
+            let v=document.getElementById("name").value
+            let e=document.getElementById("email").value
+            let p=document.getElementById("password").value
+            let d=document.getElementById("DOB").value
+            data.innerHTML = `${v}, ${e}, ${p}, ${d}`
+
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Register Form</h1>
+    <p><input type="text" id="name"></p>
+    <p><input type="text" id="email" ></p>
+    <p><input type="password" id="password" ></p>
+    <p><input type="date" id=DOB placeholder="DOB"></p>
+    <button onclick="f1()">Register</button>
+    <div id="data"></div>
+</body>
+</html>

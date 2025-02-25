@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let array = [];
+      function showLogin()
+      {
+     root.innerHTML=`  <h1>Login Form</h1>
+    <p><input type="text" id="email" placeholder="Enter email" /></p>
+    <p><input type="password" id="pass" placeholder="Enter password" /></p>
+    <button onclick="checkUser()">Login</button>
+    <button onclick="showform()">Create account</button>`
+
+      }
+      function checkUser()
+        {
+            let email=document.getElementById("email").value
+            let pass=document.getElementById("pass").value
+            let length = array.length
+        for(let i=0;i<length;i++){
+          if(array[i].email==email && array[i].pass==pass){
+            root.innerHTML = `
+            <div>Welcome</div>
+            <button onclick='showLogin()'>Logout</button>`
+           // let exists = array.some(u => u.email && u.password == password)
+            // if(exists){
+            //     document.write("WELCOME")
+            // }
+            // else{
+            //     document.write("USER NOT FOUND")
+            // }
+    
+        }
+          }}
+      function showform()
+      {
+        root.innerHTML = `<h1>Registration Form</h1>
+    <p><input type="text" id="name" placeholder="Enter name" /></p>
+    <p><input type="text" id="email" placeholder="Enter email" /></p>
+    <p><input type="password" id="pass" placeholder="Enter password" /></p>
+    <p><input type="date" id="dob" placeholder="Enter date-of-birth" /></p>
+    <button onclick="showData()">Register</button>
+    <div id="data"></div> `;
+      }
+      function deleteuser(index)
+      {
+        array.splice(index,1);
+        showuser()
+      }
+      function showData() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        let dob = document.getElementById("dob").value;
+        let user = {
+          name: name,
+          email: email,
+          password: pass,
+          dob: dob,
+        };
+        array.push(user)
+        showuser();
+        showLogin();
+        
+    }
+        //str = ${name},${email},${pass},${dob} <br>
+        //array.push(str)
+        //data.innerHTML=${name},${email},${pass},${dob}
+        function showuser()
+        {
+        let len = array.length;
+        let str = "";
+        for (let i = 0; i < len; i++) {
+          str += `<div>
+            ${array[i].name}-
+            ${array[i].email}-
+            ${array[i].password}-
+            ${array[i].dob}
+            <button onclick='deleteuser(${i})'>Delete</button>
+        </div>`;
+        }
+        data.innerHTML = str;
+      }
+    </script>
+  </head>
+  <body onload="showform()">
+    
+    <!-- <h1>Registration Form</h1>
+
+    <p><input type="text" id="name" placeholder="Enter name" /></p>
+    <p><input type="text" id="email" placeholder="Enter email" /></p>
+    <p><input type="password" id="pass" placeholder="Enter password" /></p>
+    <p><input type="date" id="dob" placeholder="Enter date-of-birth" /></p>
+    <button onclick="showData()">Register</button>-->
+    <div id="root"></div> 
+  </body>
+</html>

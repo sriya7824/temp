@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1()
+        {
+            let v=document.getElementById("name").value
+            //alert(v)
+            if(v<40){
+            msg.innerHTML ="better luck nexttime"
+            }
+            else{
+            msg.innerHTML = "promoted"
+            }
+            //msg.innerHTML = v*v
+        }
+    </script>
+    
+</head>
+<body>
+    <script>
+        console.log("hello")
+    </script>
+    <input type="text" id="name">
+    <button onclick="f1()">Submit</button>
+    <hr>
+    <div id="msg"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function f1()
+        {
+            let v=document.getElementById("name").value
+            let p=document.getElementById("password").value
+            if(v=="john@gmail.com" && p==1234)
+            {
+            msg.innerHTML = "Welcome John"
+            }
+            else
+            {
+                msg.innerHTML = "Access Denied"
+            }
+        }
+    </script>
+<style>
+body{
+    text-align:center;
+    padding: 150px;
+    border-color: blueviolet;
+    background-color:whitesmoke;
+
+}
+</style>
+</head>
+<body>
+    <h1>JOHN</h1>
+    <div>
+        <form>
+    <p><div id="msg"></div></p>
+        <p><input type="text" required id="name" placeholder="Enter email or phone number"><br><br></p>
+
+    <p><input type="password" required id="password" placeholder="Password"></p>
+    <br><br>
+    <button onclick="f1()" style= "background-color: rgb(45, 132, 199);">Log in</button>
+    </form>
+</div>
+</body>
+</html>
+
